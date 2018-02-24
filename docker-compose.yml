@@ -11,12 +11,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root123@#
 
-  wordpress_kang:
+  ecshop_kang:
     links:
       - db
-    image: wordpress-kang
+    image: ecshop-kang
     ports:
-      - "8080:80"
+      - "8081:80"
     restart: always
  
   phpmyadmin:
