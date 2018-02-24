@@ -1,4 +1,4 @@
-FROM php:5.5-apache
+FROM php:5.6-apache
 RUN docker-php-ext-install mysqli
 
 COPY vhost/000-default.conf /etc/apache2/sites-enabled/000-default.conf
