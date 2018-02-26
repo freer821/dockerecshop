@@ -5,7 +5,6 @@ services:
     image: mysql:latest
     command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
     volumes:
-      - ./dump:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
     restart: always
     ports:
@@ -14,12 +13,13 @@ services:
       MYSQL_ROOT_PASSWORD: root123@#
       MYSQL_DATABASE: ecshop
 
-  ecshop_kang:
+  ecshop-kang:
+    build: .
     links:
       - db
     image: ecshop-kang
     ports:
-      - "8081:80"
+      - "80:80"
     restart: always
  
   phpmyadmin:
