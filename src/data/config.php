@@ -1,6 +1,6 @@
 <?php
 // database host
-$db_host   = "172.19.0.2:3306";
+$db_host   = "172.18.0.2:3306";
 
 // database name
 $db_name   = "ecshop";
