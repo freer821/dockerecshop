@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'ecshop');
+define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -29,7 +29,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'root123@#');
 
 /** MySQL hostname */
-define('DB_HOST', '172.19.0.2');
+define('DB_HOST', '172.18.0.2');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
