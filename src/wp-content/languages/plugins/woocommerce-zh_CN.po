@@ -2,14 +2,17 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-29 06:35:15+0000\n"
+"PO-Revision-Date: 2018-03-04 15:19+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: Poedit 2.0.6\n"
 "Language: zh_CN\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #: templates/checkout/terms.php:25
 msgid "I&rsquo;ve read and accept the <a href=\"%s\" class=\"woocommerce-terms-and-conditions-link\">terms &amp; conditions</a>"
@@ -14250,7 +14253,7 @@ msgstr "添加至相册"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:78
 msgid "Add images to product gallery"
-msgstr "添加图片至产品相册"
+msgstr "\b添加图片至产品相册"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:58
 #: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:78
@@ -17677,7 +17680,6 @@ msgstr "%1$s 库存从 %2$s 减少到%3$s."
 msgid "Order status changed from %1$s to %2$s."
 msgstr "订单状态由 %1$s 变更为 %2$s 。"
 
-#. #-#-#-#-#  woocommerce-code.pot (WooCommerce 3.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/class-wc-admin-assets.php:90
 #: includes/admin/class-wc-admin-menus.php:60
