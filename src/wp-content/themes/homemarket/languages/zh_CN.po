@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-04 12:54+0100\n"
-"PO-Revision-Date: 2018-03-04 15:32+0100\n"
+"PO-Revision-Date: 2018-03-04 18:41+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: content-post.php:43 inc/js_composer/js_composer.php:34
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: functions.php:73
 msgid "Main Navigation"
@@ -103,11 +103,11 @@ msgstr ""
 
 #: functions.php:301
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: functions.php:302
 msgid "Reply"
-msgstr ""
+msgstr "回复"
 
 #: functions.php:307
 msgid "Your comment is awaiting moderation."
@@ -978,7 +978,7 @@ msgstr "全部分类"
 #: inc/header/header-center.php:75 inc/header/header-normal.php:77
 #: inc/header/header-rightbox.php:77
 msgid "Search our store"
-msgstr ""
+msgstr "站内搜索"
 
 #: inc/header/header-center.php:166 inc/header/header-center.php:171
 #: inc/header/header-normal.php:141 inc/header/header-normal.php:146
@@ -990,7 +990,7 @@ msgstr "我的账户"
 #: inc/header/header-normal.php:152 inc/header/header-normal.php:157
 #: inc/header/header-rightbox.php:152 inc/header/header-rightbox.php:157
 msgid "Login / Register"
-msgstr "登陆 / 注册"
+msgstr "登陆"
 
 #: inc/header/header-rightbox.php:202 inc/js_composer/js_composer.php:148
 msgid "All Collections"
@@ -1414,7 +1414,7 @@ msgstr ""
 
 #: inc/js_composer/js_composer.php:599
 msgid "Category Llist"
-msgstr ""
+msgstr "分类列表"
 
 #: inc/js_composer/js_composer.php:609
 msgid "Taxonomy Llist"
@@ -2876,11 +2876,11 @@ msgstr ""
 
 #: woocommerce/wishlist-view.php:41
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: woocommerce/wishlist-view.php:73
 msgid "Items"
-msgstr ""
+msgstr "产品"
 
 #: woocommerce/wishlist-view.php:79 woocommerce/cart/cart.php:48
 #: woocommerce/cart/cart.php:107
@@ -2889,7 +2889,7 @@ msgstr " 单价"
 
 #: woocommerce/wishlist-view.php:100
 msgid "Stock Status"
-msgstr ""
+msgstr "状态"
 
 #: woocommerce/wishlist-view.php:112
 msgid "Buy Now"
@@ -2901,7 +2901,7 @@ msgstr ""
 
 #: woocommerce/wishlist-view.php:178 woocommerce/wishlist-view.php:246
 msgid "Remove this product"
-msgstr ""
+msgstr "移除"
 
 #: woocommerce/wishlist-view.php:188
 msgid "Out of Stock"
@@ -2950,11 +2950,11 @@ msgstr ""
 
 #: woocommerce/cart/cart-empty.php:47
 msgid "Return To Shop"
-msgstr ""
+msgstr "返回商店"
 
 #: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:66 Cart Page
 msgid "Product"
-msgstr ""
+msgstr "产品"
 
 #: woocommerce/cart/cart.php:49 woocommerce/cart/cart.php:113
 msgid "Quantity"
@@ -2994,7 +2994,7 @@ msgstr "购物车"
 
 #: woocommerce/cart/mini-cart.php:65
 msgid "No products in the cart."
-msgstr ""
+msgstr "购物车内无产品"
 
 #: woocommerce/cart/mini-cart.php:73
 msgid "Subtotal"
@@ -3065,7 +3065,7 @@ msgstr ""
 #: woocommerce/myaccount/form-login.php:49
 #: woocommerce/myaccount/form-login.php:84
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: woocommerce/myaccount/form-login.php:56
 msgid "Anti-spam"
@@ -3074,35 +3074,35 @@ msgstr ""
 #: woocommerce/myaccount/form-login.php:74
 #: woocommerce/myaccount/form-login.php:91
 msgid "Login"
-msgstr ""
+msgstr "登陆"
 
 #: woocommerce/myaccount/form-login.php:81
 msgid "Email or Username"
-msgstr ""
+msgstr "邮箱或用户名"
 
 #: woocommerce/myaccount/form-login.php:93
 msgid "Remember me"
-msgstr ""
+msgstr "记住我"
 
 #: woocommerce/myaccount/form-login.php:97
 msgid "Forgot your password?"
-msgstr ""
+msgstr "忘记密码？"
 
 #: woocommerce/myaccount/form-lost-password.php:21
 msgid "Reset your password"
-msgstr ""
+msgstr "重置密码"
 
 #: woocommerce/myaccount/form-lost-password.php:23
 msgid "We will send you an email to reset your password."
-msgstr ""
+msgstr "我们将发邮件来重置您的密码"
 
 #: woocommerce/myaccount/form-lost-password.php:35
 msgid "Submit"
-msgstr ""
+msgstr "提交"
 
 #: woocommerce/myaccount/form-lost-password.php:38
 msgid "Back to login"
-msgstr ""
+msgstr "返回登陆"
 
 #: woocommerce/myaccount/orders.php:41
 msgctxt "hash before order number"
@@ -3117,7 +3117,7 @@ msgstr[0] ""
 
 #: woocommerce/myaccount/orders.php:58
 msgid "Pay"
-msgstr ""
+msgstr "支付"
 
 #: woocommerce/single-product/meta.php:27
 msgid "SKU:"
@@ -3130,12 +3130,12 @@ msgstr ""
 #: woocommerce/single-product/meta.php:31
 msgid "Category:"
 msgid_plural "Categories:"
-msgstr[0] ""
+msgstr[0] "分类"
 
 #: woocommerce/single-product/meta.php:34
 msgid "Brand:"
 msgid_plural "Brands:"
-msgstr[0] ""
+msgstr[0] "品牌"
 
 #: woocommerce/single-product/meta.php:37
 msgid "Tag:"
@@ -3174,7 +3174,7 @@ msgstr ""
 
 #: woocommerce/single-product/tabs/description.php:17
 msgid "Product Description"
-msgstr ""
+msgstr "产品描述"
 
 #: Cart Page
 msgid "Cart totals"

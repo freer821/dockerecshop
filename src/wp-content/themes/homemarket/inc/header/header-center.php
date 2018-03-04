@@ -197,7 +197,7 @@
 										<img src="<?php echo esc_url($homemarket_theme_options['main_header_shopping_cart_icon']['url']); ?>">
 									<?php else: ?>
 										<i class="fa fa-shopping-basket"></i>
-										<span class="name">Shopping Cart</span>
+										<span class="name"><?php _e('Shopping Cart','homemarket'); ?></span>
 									<?php endif; ?>
 
 									<span id="CartCount"><?php echo esc_html(WC()->cart->get_cart_contents_count()); ?></span>
