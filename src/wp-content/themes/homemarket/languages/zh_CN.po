@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-04 12:54+0100\n"
-"PO-Revision-Date: 2018-03-04 14:35+0100\n"
+"PO-Revision-Date: 2018-03-04 15:07+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,9 +135,7 @@ msgid "Welcome to Homemarket"
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:83
-msgid ""
-"Homemarket is now installed and ready to use! Please install below "
-"recommened plugins. We hope you enjoy it!"
+msgid "Homemarket is now installed and ready to use! Please install below recommened plugins. We hope you enjoy it!"
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:86
@@ -248,17 +246,11 @@ msgid "No"
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:237
-msgid ""
-"The demo importing process failed. Please check the <a href=\"javascript:"
-"void(0)\" class=\"system-status-toggle\">System Status</a>. It should help "
-"you understand if some of the requirements aren’t met. "
+msgid "The demo importing process failed. Please check the <a href=\"javascript:void(0)\" class=\"system-status-toggle\">System Status</a>. It should help you understand if some of the requirements aren’t met. "
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:242
-msgid ""
-"Please check the <a href=\"javascript:void(0)\" class=\"system-status-toggle"
-"\">System Status</a> before importing the demo content to make sure the "
-"importing process won’t fail."
+msgid "Please check the <a href=\"javascript:void(0)\" class=\"system-status-toggle\">System Status</a> before importing the demo content to make sure the importing process won’t fail."
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:255
@@ -267,9 +259,7 @@ msgid "Install"
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:262
-msgid ""
-"Install the <strong>Required Plugins</strong> above<br/> before importing "
-"the demo content."
+msgid "Install the <strong>Required Plugins</strong> above<br/> before importing the demo content."
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:278
@@ -309,10 +299,7 @@ msgid "The recommended value is 12M."
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:384
-msgid ""
-"Payment gateways can use cURL to communicate with remote servers to "
-"authorize payments, other plugins may also use it when communicating with "
-"remote services."
+msgid "Payment gateways can use cURL to communicate with remote servers to authorize payments, other plugins may also use it when communicating with remote services."
 msgstr ""
 
 #: inc/admin/homemarket_welcome.php:416
@@ -353,9 +340,7 @@ msgid "Marker Background Color"
 msgstr ""
 
 #: inc/admin/menu_marker.php:240 inc/admin/menu_marker.php:328
-msgid ""
-"The marker background color can be changed. You can select background color "
-"here."
+msgid "The marker background color can be changed. You can select background color here."
 msgstr ""
 
 #: inc/admin/theme_options/homemarket.config.php:23
@@ -841,9 +826,7 @@ msgid "Header Javascript Code"
 msgstr ""
 
 #: inc/admin/theme_options/homemarket.config.php:1396
-msgid ""
-"Paste your custom JS code here. This code will be added to the header of "
-"your site."
+msgid "Paste your custom JS code here. This code will be added to the header of your site."
 msgstr ""
 
 #: inc/admin/theme_options/homemarket.config.php:1403
@@ -851,9 +834,7 @@ msgid "Footer Javascript Code"
 msgstr ""
 
 #: inc/admin/theme_options/homemarket.config.php:1404
-msgid ""
-"Here is the place to paste your Google Analytics code or any other JS code "
-"you might want to add to be loaded in the footer of your website."
+msgid "Here is the place to paste your Google Analytics code or any other JS code you might want to add to be loaded in the footer of your website."
 msgstr ""
 
 #: inc/custom_nav_menu/edit-custom-walker.php:78
@@ -910,9 +891,7 @@ msgid "Description"
 msgstr ""
 
 #: inc/custom_nav_menu/edit-custom-walker.php:174
-msgid ""
-"The description will be displayed in the menu if the current theme supports "
-"it."
+msgid "The description will be displayed in the menu if the current theme supports it."
 msgstr ""
 
 #: inc/custom_nav_menu/edit-custom-walker.php:183
@@ -1074,9 +1053,7 @@ msgid "Extra class name"
 msgstr ""
 
 #: inc/js_composer/js_composer.php:95
-msgid ""
-"If you wish to style particular content element differently, then use this "
-"field to add a class name and then refer to it in your css file."
+msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
 msgstr ""
 
 #: inc/js_composer/js_composer.php:101
@@ -1170,9 +1147,7 @@ msgid "Custom Menu Title"
 msgstr ""
 
 #: inc/js_composer/js_composer.php:147
-msgid ""
-"Enter menu title. If you don`t enter the title, default value is \"All "
-"Collections\""
+msgid "Enter menu title. If you don`t enter the title, default value is \"All Collections\""
 msgstr ""
 
 #: inc/js_composer/js_composer.php:152
@@ -1468,10 +1443,7 @@ msgid "Image Size"
 msgstr ""
 
 #: inc/js_composer/js_composer.php:637
-msgid ""
-"Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
-"other sizes defined by theme). If you want to use theme default size, please "
-"leave this field as blank."
+msgid "Enter image size (Example: \"thumbnail\", \"medium\", \"large\", \"full\" or other sizes defined by theme). If you want to use theme default size, please leave this field as blank."
 msgstr ""
 
 #: inc/js_composer/js_composer.php:644 inc/js_composer/js_composer.php:650
@@ -2005,9 +1977,7 @@ msgid "Product Custom Tab %d Priority"
 msgstr ""
 
 #: inc/metaboxes/product.php:32
-msgid ""
-"Input the custom tab priority. (Description: 10, Additional Information: 20, "
-"Reviews: 30, Default Global Tab: 60)"
+msgid "Input the custom tab priority. (Description: 10, Additional Information: 20, Reviews: 30, Default Global Tab: 60)"
 msgstr ""
 
 #: inc/metaboxes/product.php:51
@@ -2044,14 +2014,8 @@ msgstr[0] ""
 
 #: inc/plugins/plugins.php:138
 #, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
 msgstr[0] ""
 
 #: inc/plugins/plugins.php:139
@@ -2063,26 +2027,14 @@ msgstr[0] ""
 
 #: inc/plugins/plugins.php:141
 #, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
 msgstr[0] ""
 
 #: inc/plugins/plugins.php:143
 #, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
 msgstr[0] ""
 
 #: inc/plugins/plugins.php:144
@@ -2125,12 +2077,8 @@ msgstr[0] ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:355
 #, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:361
@@ -2174,9 +2122,7 @@ msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:399
 #, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:401
@@ -2189,9 +2135,7 @@ msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
+msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:404
@@ -2207,22 +2151,16 @@ msgid "Update Required"
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1053
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1053
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1056
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1056
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1249
@@ -2419,9 +2357,7 @@ msgid "The installation of %1$s failed."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:3642
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:3644
@@ -2449,9 +2385,7 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:3650
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #: inc/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:3652
@@ -2589,9 +2523,7 @@ msgid "Selected Taxonomy:"
 msgstr ""
 
 #: inc/widgets/widgets/ajax_fitler_price.php:14
-msgid ""
-"Show a price filter widget with a list of preset price ranges that users can "
-"use to better narrow down the products"
+msgid "Show a price filter widget with a list of preset price ranges that users can use to better narrow down the products"
 msgstr ""
 
 #: inc/widgets/widgets/ajax_fitler_price.php:16
@@ -2935,8 +2867,7 @@ msgid "Your Review"
 msgstr ""
 
 #: woocommerce/single-product-reviews.php:98
-msgid ""
-"Only logged in customers who have purchased this product may leave a review."
+msgid "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
 
 #: woocommerce/wishlist-view.php:32
@@ -3252,3 +3183,8 @@ msgstr "总结"
 #: Cart Page
 msgid "Proceed to checkout"
 msgstr "去结算"
+
+#: Cart Page
+msgid "Product"
+msgstr "产品"
+
