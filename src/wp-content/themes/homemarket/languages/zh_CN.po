@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-04 12:54+0100\n"
-"PO-Revision-Date: 2018-03-04 15:07+0100\n"
+"PO-Revision-Date: 2018-03-04 15:32+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -654,7 +654,7 @@ msgstr ""
 
 #: inc/admin/theme_options/homemarket.config.php:993
 msgid "Add to Cart Label"
-msgstr ""
+msgstr "添加购物车"
 
 #: inc/admin/theme_options/homemarket.config.php:1003
 msgid "Product Archives"
@@ -2893,7 +2893,7 @@ msgstr ""
 
 #: woocommerce/wishlist-view.php:112
 msgid "Buy Now"
-msgstr "添加购物车"
+msgstr "购买"
 
 #: woocommerce/wishlist-view.php:169
 msgid "Free!"
@@ -2998,15 +2998,15 @@ msgstr ""
 
 #: woocommerce/cart/mini-cart.php:73
 msgid "Subtotal"
-msgstr ""
+msgstr "小结"
 
 #: woocommerce/cart/mini-cart.php:78
 msgid "View Cart"
-msgstr ""
+msgstr "查看购物车"
 
 #: woocommerce/cart/mini-cart.php:79
 msgid "Checkout"
-msgstr ""
+msgstr "结算"
 
 #: woocommerce/global/quantity-input.php:20
 msgctxt "Product quantity input tooltip"
@@ -3183,8 +3183,3 @@ msgstr "总结"
 #: Cart Page
 msgid "Proceed to checkout"
 msgstr "去结算"
-
-#: Cart Page
-msgid "Product"
-msgstr "产品"
-
