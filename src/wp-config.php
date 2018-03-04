@@ -29,7 +29,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'root123@#');
 
 /** MySQL hostname */
-define('DB_HOST', '172.18.0.2');
+define('DB_HOST', '172.19.0.2');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
@@ -80,6 +80,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 define('FS_METHOD', 'direct');
 define( 'WP_AUTO_UPDATE_CORE', false );
+define ('WPLANG', 'zh_CN');
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

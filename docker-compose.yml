@@ -13,11 +13,12 @@ services:
       MYSQL_ROOT_PASSWORD: root123@#
       MYSQL_DATABASE: wordpress
 
-  ecshop-kang:
-    build: .
+  wordpress-kang:
     links:
       - db
-    image: ecshop-kang
+    image: wordpress-kang
+    volumes:
+      - /home/ubuntu/work/docker/dockerecshop/src:/var/www/html
     ports:
       - "80:80"
     restart: always
