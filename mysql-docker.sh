@@ -1,5 +1,5 @@
 #!/bin/bash
 # Restore
-cat ./dump/wp-kang.sql | docker exec -i 322ba4a114ab /usr/bin/mysql -u root --password=root123@#  wordpress
+cat ./dump/wp-kang.sql | sudo docker exec -i 322ba4a114ab /usr/bin/mysql -u root --password=root123@#  wordpress
 # Backup
-#docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+sudo docker exec 14eb22c82c03 /usr/bin/mysqldump -u root --password=root123@# wordpress > wp-kang_4.sql

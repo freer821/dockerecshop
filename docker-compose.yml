@@ -17,8 +17,6 @@ services:
     links:
       - db
     image: wordpress-kang
-    volumes:
-      - /home/ubuntu/work/docker/dockerecshop/src:/var/www/html
     ports:
       - "80:80"
     restart: always
