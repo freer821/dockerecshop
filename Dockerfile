@@ -1,7 +1,10 @@
-FROM php:5.6-apache
-RUN docker-php-ext-install mysql mysqli
+FROM mattrayner/lamp:latest-1604
 
-COPY vhost/upload.ini /usr/local/etc/php/conf.d/upload.ini
-COPY vhost/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-COPY src/ /var/www/html/
-RUN chmod -R 777 /var/www/html/
+RUN rm -fr /app/* && mkdir /app/mysql
+
+COPY src/ /app
+COPY dump/wordpress_run.sql /app/mysql/wordpress_run.sql
+COPY dump/wordpress_run.sh /app/mysql/wordpress_run.sh
+
+EXPOSE 80
+CMD ["/run.sh"]
