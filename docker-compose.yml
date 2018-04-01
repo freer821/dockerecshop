@@ -13,13 +13,6 @@ services:
       MYSQL_ROOT_PASSWORD: root123@#
       MYSQL_DATABASE: wordpress
 
-  wordpress-kang:
-    links:
-      - db
-    image: wordpress-kang
-    ports:
-      - "80:80"
-    restart: always
  
   phpmyadmin:
     links:
