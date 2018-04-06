@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-03-04 15:19+0100\n"
+"PO-Revision-Date: 2018-04-06 23:16+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -8699,12 +8699,12 @@ msgstr "未分类"
 #: includes/wc-account-functions.php:65
 msgctxt "edit-address-slug"
 msgid "shipping"
-msgstr "配送"
+msgstr ""
 
 #: includes/wc-account-functions.php:64
 msgctxt "edit-address-slug"
 msgid "billing"
-msgstr "账单"
+msgstr ""
 
 #. translators: %s: Order date
 #: includes/class-wc-order-refund.php:64
@@ -16072,7 +16072,7 @@ msgstr "访客"
 
 #: includes/admin/class-wc-admin-post-types.php:310
 msgid "Billing"
-msgstr "账单："
+msgstr ""
 
 #. translators: %d: notes count
 #: includes/admin/class-wc-admin-post-types.php:608
