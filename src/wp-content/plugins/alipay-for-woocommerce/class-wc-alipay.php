@@ -271,7 +271,7 @@ class WC_Alipay extends WC_Payment_Gateway {
 
         // Service parameter that decide the payment type
         if ( $this->payment_method == 'direct' ){
-            $service = 'create_direct_pay_by_user';
+            $service = 'create_forex_trade';
         } else if ( $this->payment_method == 'dualfun' ){
             $service = 'trade_create_by_buyer';
         } else if ( $this->payment_method == 'escrow' ){
