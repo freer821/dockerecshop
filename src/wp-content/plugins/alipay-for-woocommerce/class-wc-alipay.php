@@ -316,8 +316,9 @@ class WC_Alipay extends WC_Payment_Gateway {
             "subject"           => $subject,
             "currency"          => "EUR",
             "price"             => $total_fee,
+            "body"	            => "",
             "quantity"          => 1,          
-            "_input_charset"    => $this->charset,
+            "_input_charset"    => trim(strtolower($this->charset))
         );
         if ($this->payment_method != 'direct') {
             $add_args = array(
