@@ -314,6 +314,7 @@ class WC_Alipay extends WC_Payment_Gateway {
             "seller_email"      => $this->alipay_account,
             "out_trade_no"      => $this->order_prefix . ltrim( $order->get_order_number(), '#' ),
             "subject"           => $subject,
+            "currency"          => "EUR",
             "price"             => $total_fee,
             "quantity"          => 1,          
             "_input_charset"    => $this->charset,
