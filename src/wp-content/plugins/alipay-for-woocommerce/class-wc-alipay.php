@@ -282,6 +282,7 @@ class WC_Alipay extends WC_Payment_Gateway {
         $total_fee = $order->get_total();
         
         //Multi-currency supported by WooCommerce Multilingual plugin
+        /** only EUR to be used
         If ($this->multi_currency_enabled && $this->exchange_rate) {
             
             if ( !in_array(get_woocommerce_currency(), $this->supported_currencies ) && $this->current_currency != get_woocommerce_currency() ) {
@@ -302,23 +303,19 @@ class WC_Alipay extends WC_Payment_Gateway {
             if ( !in_array( $this->current_currency, $this->supported_currencies ) && $this->exchange_rate ) {
                 $total_fee = round( $total_fee * $this->exchange_rate, 2 );
             }
-        }
+        }*/
 
         // Fullfill the alipay args array
         $alipay_args = array(
             "service"           => $service,
             "partner"           => $this->partnerID,
-            "payment_type"      => "1",
             "notify_url"        => urldecode( $this->notify_url ),                //Avoid double encoding
             "return_url"        => urldecode( $this->get_return_url( $order ) ),  //Avoid double encoding
-            "seller_email"      => $this->alipay_account,
             "out_trade_no"      => $this->order_prefix . ltrim( $order->get_order_number(), '#' ),
             "subject"           => $subject,
             "currency"          => "EUR",
-            "price"             => $total_fee,
-            "body"	            => "",
-            "quantity"          => 1,          
-            "_input_charset"    => trim(strtolower($this->charset))
+            "total_fee"         => $total_fee,
+            "_input_charset"    => $this->charset
         );
         if ($this->payment_method != 'direct') {
             $add_args = array(
@@ -359,10 +356,12 @@ class WC_Alipay extends WC_Payment_Gateway {
         $alipay_config = array();
         $alipay_config['partner']       = trim( $this->partnerID );
         $alipay_config['key']           = trim( $this->secure_key );
-        $alipay_config['sign_type']     = 'MD5';
+        $alipay_config['sign_type']     = strtoupper('MD5');
         $alipay_config['input_charset'] = $this->charset;
         $alipay_config['cacert']        = $this->lib_path . DIRECTORY_SEPARATOR . 'cacert.pem';
         $alipay_config['transport']     = 'http';
+        $alipay_config['service']       = "create_forex_trade";
+
 
         // SSL support
         if( is_ssl() || get_option('woocommerce_force_ssl_checkout') == 'yes' ){

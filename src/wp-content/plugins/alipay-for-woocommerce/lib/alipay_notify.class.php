@@ -20,8 +20,10 @@ class AlipayNotify {
     /**
      * HTTPS形式消息验证地址
      */
-	//var $https_verify_url = 'https://mapi.alipay.com/gateway.do?service=notify_verify&';
-	var $https_verify_url = 'https://openapi.alipaydev.com/gateway.do?service=notify_verify&';
+	var $https_verify_url = 'https://mapi.alipay.com/gateway.do?service=notify_verify&';
+	
+	//沙箱网关The Alipay gateway of sandbox environment.
+	//var $https_verify_url = 'https://openapi.alipaydev.com/gateway.do?service=notify_verify&';
 
 	/**
      * HTTP形式消息验证地址
