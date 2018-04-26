@@ -60,7 +60,6 @@ class WC_Alipay extends WC_Payment_Gateway {
         $this->debug                  = $this->get_option( 'debug' );
         $this->form_submission_method = $this->get_option( 'form_submission_method' ) == 'yes' ? true : false;
         $this->order_title_format     = $this->get_option( 'order_title_format' );
-        $this->exchange_rate          = $this->get_option( 'exchange_rate' );
         $this->order_prefix           = $this->get_option( 'order_prefix' );
         
         // Logs
@@ -80,39 +79,6 @@ class WC_Alipay extends WC_Payment_Gateway {
 
         // Display Alipay Trade No. in the backend.
         add_action( 'woocommerce_admin_order_data_after_billing_address',array( $this, 'wc_alipay_display_order_meta_for_admin' ) );
-    }
-
-    /**
-     * Check if this gateway is enabled and available for the selected main currency
-     *
-     * @access public
-     * @return bool
-     */
-    function is_available() {
-
-        $is_available = ( 'yes' === $this->enabled ) ? true : false;
-
-        if ($this->multi_currency_enabled) {
-            if ( !in_array( get_woocommerce_currency(), array( 'RMB', 'CNY') ) && !$this->exchange_rate) {
-                $is_available = false;
-            }
-        } else if ( !in_array( $this->current_currency, array( 'RMB', 'CNY') ) && !$this->exchange_rate) {
-            $is_available = false;
-        }
-
-        return $is_available;
-    }
-
-    /**
-     * Check if requirements are met and display notices
-     *
-     * @access public
-     * @return void
-     */
-    function requirement_checks() { 
-        if ( !in_array( $this->current_currency, array( 'RMB', 'CNY') ) && !$this->exchange_rate ) {
-            echo '<div class="error"><p>' . sprintf( __('Alipay is enabled, but the store currency is not set to Chinese Yuan. Please <a href="%1s">set the %2s against the Chinese Yuan exchange rate</a>.', 'alipay' ), admin_url( 'admin.php?page=wc-settings&tab=checkout&section=wc_alipay#woocommerce_alipay_exchange_rate' ), $this->current_currency ) . '</p></div>';
-        }
     }
 
     /**
@@ -236,16 +202,6 @@ class WC_Alipay extends WC_Payment_Gateway {
              $this->form_fields['debug']['description'] = sprintf(__('Log Alipay events, such as trade status, inside <code>%s</code>', 'alipay'), wc_get_log_file_path( 'alipay' ) );
         }
 
-        if (!in_array( $this->current_currency, array( 'RMB', 'CNY') )) {
-
-            $this->form_fields['exchange_rate'] = array(
-                'title'       => __('Exchange Rate', 'alipay'),
-                'type'        => 'text',
-                'description' => sprintf(__("Please set the %s against Chinese Yuan exchange rate, eg if your currency is US Dollar, then you should enter 6.19", 'alipay'), $this->current_currency),
-                'css'         => 'width:80px;',
-                'desc_tip'    => true,
-            );
-        }
     }
 
     /**
@@ -278,33 +234,6 @@ class WC_Alipay extends WC_Payment_Gateway {
             $service = 'create_partner_trade_by_buyer';
         }
 
-        // Order total price
-        $total_fee = $order->get_total();
-        
-        //Multi-currency supported by WooCommerce Multilingual plugin
-        /** only EUR to be used
-        If ($this->multi_currency_enabled && $this->exchange_rate) {
-            
-            if ( !in_array(get_woocommerce_currency(), $this->supported_currencies ) && $this->current_currency != get_woocommerce_currency() ) {
-               
-                $sql = "SELECT (value) FROM " . $wpdb->prefix . "icl_currencies WHERE code = '" . get_woocommerce_currency() . "'";
-                $currency = $wpdb->get_results($sql, OBJECT);
-
-                if ( $currency ) {
-                    $exchange_rate = $currency[0]->value;
-                    $total_fee = round( ( $total_fee / $exchange_rate ) * $this->exchange_rate, 2 );
-                }
-                
-            } else if ( $this->current_currency == get_woocommerce_currency() ) {
-                $total_fee = round( $total_fee * $this->exchange_rate, 2 );
-            }
-            
-        } else {
-            if ( !in_array( $this->current_currency, $this->supported_currencies ) && $this->exchange_rate ) {
-                $total_fee = round( $total_fee * $this->exchange_rate, 2 );
-            }
-        }*/
-
         // Fullfill the alipay args array
         $alipay_args = array(
             "service"           => $service,
@@ -313,8 +242,8 @@ class WC_Alipay extends WC_Payment_Gateway {
             "return_url"        => urldecode( $this->get_return_url( $order ) ),  //Avoid double encoding
             "out_trade_no"      => $this->order_prefix . ltrim( $order->get_order_number(), '#' ),
             "subject"           => $subject,
-            "currency"          => "EUR",
-            "total_fee"         => $total_fee,
+            "currency"          => $this->current_currency,
+            "total_fee"         => $order->get_total(), // Order total price
             "_input_charset"    => $this->charset
         );
         if ($this->payment_method != 'direct') {
