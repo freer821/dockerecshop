@@ -313,6 +313,7 @@ class WC_Alipay extends WC_Payment_Gateway {
             "return_url"        => urldecode( $this->get_return_url( $order ) ),  //Avoid double encoding
             "out_trade_no"      => $this->order_prefix . ltrim( $order->get_order_number(), '#' ),
             "subject"           => $subject,
+            "product_code"      => "NEW_OVERSEAS_SELLER",
             "currency"          => "EUR",
             "total_fee"         => $total_fee,
             "_input_charset"    => $this->charset
