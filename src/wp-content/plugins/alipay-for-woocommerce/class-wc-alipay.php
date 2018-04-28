@@ -8,7 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @class       WC_Alipay
  * @extends     WC_Payment_Gateway
- * @version     1.3.3
+ * @author      freer
+ * @version     1.0.0
  */
 
 class WC_Alipay extends WC_Payment_Gateway {
@@ -56,7 +57,6 @@ class WC_Alipay extends WC_Payment_Gateway {
         $this->alipay_account         = $this->get_option( 'alipay_account' );
         $this->partnerID              = $this->get_option( 'partnerID' );
         $this->secure_key             = $this->get_option( 'secure_key' );
-        $this->payment_method         = $this->get_option( 'payment_method' );
         $this->debug                  = $this->get_option( 'debug' );
         $this->form_submission_method = $this->get_option( 'form_submission_method' ) == 'yes' ? true : false;
         $this->order_title_format     = $this->get_option( 'order_title_format' );
@@ -92,7 +92,7 @@ class WC_Alipay extends WC_Payment_Gateway {
 
         ?>
         <h3><?php _e('Alipay', 'alipay'); ?></h3>
-        <p><?php _e('Alipay is a simple, secure and fast online payment method, customer can pay via debit card, credit card or alipay balance.', 'alipay'); ?></p>
+        <p><?php _e('Alipay is a simple, secure and fast online payment method, customer can pay via debit card, credit card or alipay balance. this pulgin is only aviable for overseas seller.', 'alipay'); ?></p>
        
         <table class="form-table">
             <?php
@@ -132,27 +132,16 @@ class WC_Alipay extends WC_Payment_Gateway {
                 'default'     => __('Pay via Alipay, if you don\'t have an Alipay account, you can also pay with your debit card or credit card', 'alipay'),
                 'desc_tip'    => true,
             ),
-            'payment_method' => array(
-                'title'       => __('Alipay Payment Gateway Type', 'alipay'),
-                'type'        => 'select',
-                'description' => __('Please choose a payment method, note that the Dual requires a corporate account', 'alipay'),
-                'options'     => array(
-                    'escrow'  => __('Escrow Payment', 'alipay'),
-                    'dualfun' => __('Dual(Direct Payment + Escrow payment)', 'alipay'),
-                    'direct'  => __('Direct Payment', 'alipay')
-                ),
-                'desc_tip'    => true,
-            ),
             'partnerID' => array(
                 'title'       => __('Partner ID', 'alipay'),
                 'type'        => 'text',
-                'description' => __('Please enter the partner ID<br />If you don\'t have one, <a href="https://b.alipay.com/newIndex.htm" target="_blank">click here</a> to get.', 'alipay'),
+                'description' => __('Please enter the partner ID<br />If you don\'t have one, <a href="http://global.alipay.com/" target="_blank">click here</a> to get.', 'alipay'),
                 'css'         => 'width:400px'
             ),
             'secure_key' => array(
                 'title'       => __('Security Key', 'alipay'),
                 'type'        => 'text',
-                'description' => __('Please enter the security key<br />If you don\'t have one, <a href="https://b.alipay.com/newIndex.htm" target="_blank">click here</a> to get.', 'alipay'),
+                'description' => __('Please enter the security key<br />If you don\'t have one, <a href="http://global.alipay.com/" target="_blank">click here</a> to get.', 'alipay'),
                 'css'         => 'width:400px'
             ),
             'alipay_account' => array(
@@ -226,13 +215,8 @@ class WC_Alipay extends WC_Payment_Gateway {
         
 
         // Service parameter that decide the payment type
-        if ( $this->payment_method == 'direct' ){
-            $service = 'create_forex_trade';
-        } else if ( $this->payment_method == 'dualfun' ){
-            $service = 'trade_create_by_buyer';
-        } else if ( $this->payment_method == 'escrow' ){
-            $service = 'create_partner_trade_by_buyer';
-        }
+        // only for New Cross Border
+        $service = 'create_forex_trade';
 
         // Fullfill the alipay args array
         $alipay_args = array(
@@ -247,29 +231,7 @@ class WC_Alipay extends WC_Payment_Gateway {
             "total_fee"         => $order->get_total(), // Order total price
             "_input_charset"    => $this->charset
         );
-        if ($this->payment_method != 'direct') {
-            $add_args = array(
-                "logistics_fee"     => '0.00',
-                "logistics_type"    => 'EXPRESS', //optional EXPRESS（快递）、POST（平邮）、EMS（EMS）
-                "logistics_payment" => 'SELLER_PAY', //optional SELLER_PAY（卖家承担运费）、BUYER_PAY（买家承担运费）               
-            );
-
-            if( !empty($buyer_name) )                   
-                $add_args['receive_name']       = $this->clean( $buyer_name );
-            if( !empty($order->billing_address_1) )     
-                $add_args['receive_address']    = $this->clean( $order->billing_address_1 );
-            if( !empty($order->shipping_postcode) )     
-                $add_args['receive_zip']        = $order->shipping_postcode;
-            if( !empty($order->billing_phone) )         
-                $add_args['receive_phone']      = $order->billing_phone;
-            if( !empty($order->billing_phone) )        
-                $add_args['receive_mobile']     = $order->billing_phone;
-
-            if( empty($add_args['receive_address']) ) unset($add_args['receive_address']);
-
-            $alipay_args = array_merge($alipay_args, $add_args);
-        }
-
+        
         $alipay_args = apply_filters( 'woocommerce_alipay_args', $alipay_args );
 
         return $alipay_args;
@@ -603,9 +565,8 @@ class WC_Alipay extends WC_Payment_Gateway {
             $order_trade_status = get_post_meta( $order_id, '_alipay_trade_current_status', true );
             if( empty( $order_trade_status ) ) $order_trade_status = 0;
 
-            if ( $this->payment_method == 'direct' ) {
-
-                if ( ( $_POST['trade_status'] == 'TRADE_FINISHED' || $_POST['trade_status'] == 'TRADE_SUCCESS' ) && $order->status != 'completed' ) {
+            // only for direct payment
+            if ( ( $_POST['trade_status'] == 'TRADE_FINISHED' || $_POST['trade_status'] == 'TRADE_SUCCESS' ) && $order->status != 'completed' ) {
 
                     $order->payment_complete();                   
 
@@ -613,71 +574,6 @@ class WC_Alipay extends WC_Payment_Gateway {
                         update_post_meta( $order_id, 'Alipay Trade No.', wc_clean( $_POST['trade_no'] ) );
                     }  
                     $this->successful_request( $_POST, $order_id );
-                }
-
-            } else {
-
-                switch( $_POST['trade_status'] ){
-
-                    case 'WAIT_BUYER_PAY' :
-
-                        if( $order_trade_status == 0 ){
-                            update_post_meta( $order_id, '_alipay_trade_current_status',  1 );
-                            $order->add_order_note( __( 'Order received, awaiting payment. ', 'alipay' ) );                        
-                        }
-                        $this->successful_request( $_POST, $order_id ); 
-                        break;
-
-                    case 'WAIT_SELLER_SEND_GOODS' :
-
-                        $order_needs_updating = ( in_array( $order->status, array('processing', 'completed') ) ) ? false : true;
-                        $status = apply_filters( 'woocommerce_alipay_payment_successful_status', 'processing', $order); 
-
-                        if( $order_needs_updating && $order_trade_status == 1 ){
-                             // Update order status
-                            update_post_meta( $order_id, '_alipay_trade_current_status', 2 );
-                            $order->update_status( $status, __( 'Payment received, awaiting fulfilment. ', 'alipay' ) );
-                            
-                            if( isset($_POST['trade_no']) && !empty($_POST['trade_no']) ){
-                                update_post_meta( $order_id, 'Alipay Trade No.', wc_clean( $_POST['trade_no'] ) );
-                                $success = $this->send_goods_confirm( wc_clean( $_POST['trade_no'] ), $order );
-                            }
-
-                            // Reduce stock levels
-                            $order->reduce_order_stock();
-                        }
-                        $this->successful_request( $_POST, $order_id );
-                        break;
-
-                    case 'WAIT_BUYER_CONFIRM_GOODS' :
-
-                        if( $order_trade_status == 2 ){
-                            update_post_meta( $order_id, '_alipay_trade_current_status', 3 );
-                            $order->add_order_note( __( 'Your order has been shipped, awaiting buyer\'s confirmation. ', 'alipay' ) );  
-                        }                        
-                        $this->successful_request( $_POST, $order_id );
-                        break;
-
-                    case 'TRADE_FINISHED' :
-
-                        if( $order_trade_status == 3 ){
-                            update_post_meta( $order_id, '_alipay_trade_current_status', 4 );
-                            add_filter( 'woocommerce_valid_order_statuses_for_payment_complete', array( $this, 'valid_order_statuses' ) );
-                            add_filter( 'woocommerce_payment_complete_reduce_order_stock', '__return_false' );
-                            add_filter( 'woocommerce_payment_complete_order_status', array( $this, 'complete_order_status' ) );
-                            $order->payment_complete();
-
-                        } else if( $order_trade_status == 1 && $this->payment_method == 'dualfun' ){
-                            update_post_meta( $order_id, '_alipay_trade_current_status', 4 );                        
-                            $order->payment_complete();
-                        }
-                        $this->successful_request( $_POST, $order_id );
-                        break;
-
-                    default :
-
-                        $this->successful_request( $_POST, $order_id );
-                }                    
             }
 
         } else {
