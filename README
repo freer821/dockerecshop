@@ -1,0 +1,4 @@
+sudo docker run -d --name wordpress_kang -p 127.0.0.1:8080:80  -v /home/ubuntu/work/docker/dockerecshop/src:/app mattrayner/lamp:latest-1604
+bash in docker
+create database wordpress
+mysql -u root wordpress < wordpress_*.sql
