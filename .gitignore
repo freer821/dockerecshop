@@ -1,4 +1,4 @@
 src/tmp
-upload
-src/mysql/
+#upload
+#src/mysql/
 **/*log
